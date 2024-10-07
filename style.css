@@ -22,19 +22,15 @@ body, html {
 }
 
 .d-pad {
-    font-size: 24px; /* Larger font for PS4-style buttons */
-    padding: 15px;
-    margin: 5px;
-    border: none;
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.7); /* Dark button color */
-    color: white; /* White text color */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s; /* Smooth color transition */
+    background: none; /* No background */
+    border: none; /* No border */
+    padding: 10px; /* Adjust padding */
+    cursor: pointer; /* Pointer cursor */
 }
 
-.d-pad:hover {
-    background-color: rgba(0, 0, 0, 0.9); /* Darker on hover */
+.d-pad img {
+    width: 50px; /* Set width for button images */
+    height: 50px; /* Set height for button images */
 }
 
 .d-pad-row {
