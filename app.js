@@ -207,32 +207,38 @@ document.getElementById('startButton').addEventListener('click', function() {
 });
 
 // D-pad button event listeners for mobile controls
-document.getElementById('upButton').addEventListener('touchstart', function() {
+document.getElementById('upButton').addEventListener('touchstart', function(event) {
+    event.preventDefault(); // Prevent default behavior (text selection)
     upPressed = true; // Set upPressed to true
 });
-document.getElementById('upButton').addEventListener('touchend', function() {
+document.getElementById('upButton').addEventListener('touchend', function(event) {
+    event.preventDefault(); // Prevent default behavior
     upPressed = false; // Set upPressed to false
 });
 
-document.getElementById('downButton').addEventListener('touchstart', function() {
+document.getElementById('downButton').addEventListener('touchstart', function(event) {
+    event.preventDefault(); // Prevent default behavior
     downPressed = true; // Set downPressed to true
 });
-document.getElementById('downButton').addEventListener('touchend', function() {
+document.getElementById('downButton').addEventListener('touchend', function(event) {
+    event.preventDefault(); // Prevent default behavior
     downPressed = false; // Set downPressed to false
 });
 
-document.getElementById('leftButton').addEventListener('touchstart', function() {
+document.getElementById('leftButton').addEventListener('touchstart', function(event) {
+    event.preventDefault(); // Prevent default behavior
     leftPressed = true; // Set leftPressed to true
 });
-document.getElementById('leftButton').addEventListener('touchend', function() {
+document.getElementById('leftButton').addEventListener('touchend', function(event) {
+    event.preventDefault(); // Prevent default behavior
     leftPressed = false; // Set leftPressed to false
 });
 
-document.getElementById('rightButton').addEventListener('touchstart', function() {
+document.getElementById('rightButton').addEventListener('touchstart', function(event) {
+    event.preventDefault(); // Prevent default behavior
     rightPressed = true; // Set rightPressed to true
 });
-document.getElementById('rightButton').addEventListener('touchend', function() {
+document.getElementById('rightButton').addEventListener('touchend', function(event) {
+    event.preventDefault(); // Prevent default behavior
     rightPressed = false; // Set rightPressed to false
 });
-
-// Remove keyboard controls since they're not needed
