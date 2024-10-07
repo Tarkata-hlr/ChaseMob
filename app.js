@@ -36,8 +36,6 @@ let isGameOver = false; // To prevent multiple game over triggers
 let fallSpeed = 10; // Fixed fall speed for the player
 let startTime = null; // Track start time for linear speed increase
 
-let keys = {};
-
 // Direction tracking for D-Pad buttons
 let upPressed = false;
 let downPressed = false;
@@ -117,7 +115,7 @@ function gameLoop() {
         }
     });
 
-    // Update player position based on key presses and D-Pad
+    // Update player position based on D-Pad
     if (upPressed && player.y > 0) player.y -= player.speed; // Move up
     if (downPressed && player.y < canvas.height - player.height) player.y += player.speed; // Move down
     if (leftPressed && player.x > 0) player.x -= player.speed; // Move left
@@ -208,40 +206,33 @@ document.getElementById('startButton').addEventListener('click', function() {
     }
 });
 
-// D-pad button event listeners for mobile and desktop controls
-document.getElementById('upButton').addEventListener('mousedown', function() {
+// D-pad button event listeners for mobile controls
+document.getElementById('upButton').addEventListener('touchstart', function() {
     upPressed = true; // Set upPressed to true
 });
-document.getElementById('upButton').addEventListener('mouseup', function() {
+document.getElementById('upButton').addEventListener('touchend', function() {
     upPressed = false; // Set upPressed to false
 });
 
-document.getElementById('downButton').addEventListener('mousedown', function() {
+document.getElementById('downButton').addEventListener('touchstart', function() {
     downPressed = true; // Set downPressed to true
 });
-document.getElementById('downButton').addEventListener('mouseup', function() {
+document.getElementById('downButton').addEventListener('touchend', function() {
     downPressed = false; // Set downPressed to false
 });
 
-document.getElementById('leftButton').addEventListener('mousedown', function() {
+document.getElementById('leftButton').addEventListener('touchstart', function() {
     leftPressed = true; // Set leftPressed to true
 });
-document.getElementById('leftButton').addEventListener('mouseup', function() {
+document.getElementById('leftButton').addEventListener('touchend', function() {
     leftPressed = false; // Set leftPressed to false
 });
 
-document.getElementById('rightButton').addEventListener('mousedown', function() {
+document.getElementById('rightButton').addEventListener('touchstart', function() {
     rightPressed = true; // Set rightPressed to true
 });
-document.getElementById('rightButton').addEventListener('mouseup', function() {
+document.getElementById('rightButton').addEventListener('touchend', function() {
     rightPressed = false; // Set rightPressed to false
 });
 
-// Keyboard controls for desktop
-document.addEventListener('keydown', function(event) {
-    keys[event.key] = true; // Register key down
-});
-
-document.addEventListener('keyup', function(event) {
-    delete keys[event.key]; // Unregister key up
-});
+// Remove keyboard controls since they're not needed
